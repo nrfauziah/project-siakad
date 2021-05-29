@@ -30,4 +30,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('admin', function () { return view('admin'); })->middleware('checkRole:admin');
 Route::get('guru','GuruController@index')->name('guru')->middleware(['checkRole:admin,guru']);
+Route::get('datasiswa','SiswaController@index')->name('datasiswa')->middleware(['checkRole:admin,guru']);
+Route::get('datasiswa/create','SiswaController@create')->name('tambahdatasiswa')->middleware(['checkRole:admin,guru']);
 Route::get('siswa', function () { return view('siswa'); });
+
+
+

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Siswa;
 
 class SiswaController extends Controller
 {
@@ -23,6 +24,14 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        return view('siswa');
+        $siswas = Siswa::all();
+        return view('siswa',compact('siswas'));
+    }
+
+    public function create(){
+        $siswas = Siswa::all();
+
+        return view('createsiswa',compact('siswas'));
+
     }
 }

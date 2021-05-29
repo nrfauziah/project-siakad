@@ -119,7 +119,7 @@
                         <li>
                             <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span> Data Master </span></a>
                             <ul class="menu-dropdown">
-                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Data Siswa </a></li>
+                                <li><a href="{{route('datasiswa')}}"><i class="ion ion-ios-circle-outline"></i> Data Siswa </a></li>
                                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Data Guru </a></li>
                                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Data Kelas </a></li>
                             </ul>
