@@ -111,19 +111,19 @@
                     </div>
                     <ul class="sidebar-menu">
                         <li class="menu-header">Dashboard</li>
-                        <li class="active">
-                            <a href="#"><i class="ion ion-speedometer"></i><span>Dashboard</span></a>
+                        <li>
+                            <a href="{{ route('home') }}"><i class="ion ion-speedometer"></i><span>Dashboard</span></a>
                         </li>
 
                         <li class="menu-header">Administrasi</li>
-                        <li>
+                        <li class="active">
                             <a href="#" class="has-dropdown"><i class="ion ion-ios-albums-outline"></i><span> Data Master </span></a>
                             <ul class="menu-dropdown">
-                                <li><a href="{{route('datasiswa')}}"><i class="ion ion-ios-circle-outline"></i> Data Siswa </a></li>
+                                <li class="active"><a href="{{route('datasiswa')}}"><i class="ion ion-ios-circle-outline"></i> Data Siswa </a></li>
                                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Data Guru </a></li>
                                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Data Kelas </a></li>
                             </ul>
-                        </li>
+                        </>
                         <li>
                             <a href="table.html"><i class="ion ion-clipboard"></i><span>Tables</span></a>
                         </li>
@@ -170,52 +170,55 @@
             </div>
             <div class="main-content">
                 <section class="section">
-                  <h1 class="section-header">
-                    <div>Tables</div>
-                  </h1>
-                  <div class="section-body">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="card">
-                          <div class="card-header">
-                            <button><a href="{{route('tambahdatasiswa')}}">Tambah Data</a></button>
-                          </div>
-                          <div class="card-body">
-                            <div class="table-responsive">
-                              <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>No</th>
-                                        <th>Kelas</th>
-                                        <th>Nama Lengkap</th>
-                                        <th>NIPD</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th>Tempat Lahir</th>
-                                        <th>Tanggal Lahir</th>
-                                        <th>created_at</th>
-                                        <th>updated_at</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ( $siswas as $key => $siswa )
-                                        <tr>
-                                            <td>{{$key+1}}</td>
-                                            <td>{{$siswa->kelas_id}}</td>
-                                            <td>{{$siswa->nama_lengkap}}</td>
-                                            <td>{{$siswa->nipd}}</td>
-                                            <td>{{$siswa->jk}}</td>
-                                            <td>{{$siswa->tmp_lahir}}</td>
-                                            <td>{{$siswa->tgl_lahir}}</td>
-                                            <td>{{$siswa->created_at}}</td>
-                                            <td>{{$siswa->updated_at}}</td>
-                                            {{-- <td>{{$siswa-}}</td> --}}
-                                        </tr>
-                                    @endforeach
-                            
-                                </tbody>
-                              </table>
+                    <h1 class="section-header">
+                        <div>Tables</div>
+                    </h1>
+                    <div class="section-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-header mt-3">
+                                        <a href="{{route('tambahdatasiswa')}}"><button class="btn btn-sm btn-info">Tambah Data</button></a>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                        <table class="table table-bordered text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Nama Siswa</th>
+                                                    <th>Kelas</th>
+                                                    <th>Jenis Kelamin</th>
+                                                    <th>NIPD</th>
+                                                    <th>Tempat Lahir</th>
+                                                    <th>Tanggal Lahir</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ( $siswas as $key => $siswa )
+                                                    <tr>
+                                                        <td>{{$key+1}}</td>
+                                                        <td>{{$siswa->nama_lengkap}}</td>
+                                                        <td>{{$siswa->kelas_id}}</td>
+                                                        <td>{{$siswa->jk}}</td>
+                                                        <td>{{$siswa->nipd}}</td>
+                                                        <td>{{$siswa->tmp_lahir}}</td>
+                                                        <td>{{$siswa->tgl_lahir}}</td>
+                                                        {{-- <td>{{$siswa-}}</td> --}}
+                                                    </tr>
+                                                @endforeach
+                                        
+                                            </tbody>
+                                        </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
             <footer class="main-footer">
                 <div class="footer-left">
                     Copyright &copy; 2021

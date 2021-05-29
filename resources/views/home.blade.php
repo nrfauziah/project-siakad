@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" name="viewport">
+
     <title>Apk Sistem Akademik</title>
 
     <link rel="stylesheet" href="{{ asset('dist/modules/bootstrap/css/bootstrap.min.css') }}">
@@ -15,7 +15,6 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
-
 <body>
     <div id="app">
         <div class="main-wrapper">
@@ -42,39 +41,11 @@
                             </div>
                             <div class="dropdown-list-content">
                                 <a href="#" class="dropdown-item dropdown-item-unread">
-                                <img alt="image" src="../dist/img/avatar/avatar-1.jpeg" class="rounded-circle dropdown-item-img">
-                                <div class="dropdown-item-desc">
-                                    <b>Kusnaedi</b> has moved task <b>Fix bug header</b> to <b>Done</b>
-                                    <div class="time">10 Hours Ago</div>
-                                </div>
-                                </a>
-                                <a href="#" class="dropdown-item dropdown-item-unread">
-                                <img alt="image" src="../dist/img/avatar/avatar-2.jpeg" class="rounded-circle dropdown-item-img">
-                                <div class="dropdown-item-desc">
-                                    <b>Ujang Maman</b> has moved task <b>Fix bug footer</b> to <b>Progress</b>
-                                    <div class="time">12 Hours Ago</div>
-                                </div>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                <img alt="image" src="../dist/img/avatar/avatar-3.jpeg" class="rounded-circle dropdown-item-img">
-                                <div class="dropdown-item-desc">
-                                    <b>Agung Ardiansyah</b> has moved task <b>Fix bug sidebar</b> to <b>Done</b>
-                                    <div class="time">12 Hours Ago</div>
-                                </div>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                <img alt="image" src="../dist/img/avatar/avatar-4.jpeg" class="rounded-circle dropdown-item-img">
-                                <div class="dropdown-item-desc">
-                                    <b>Ardian Rahardiansyah</b> has moved task <b>Fix bug navbar</b> to <b>Done</b>
-                                    <div class="time">16 Hours Ago</div>
-                                </div>
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                <img alt="image" src="../dist/img/avatar/avatar-5.jpeg" class="rounded-circle dropdown-item-img">
-                                <div class="dropdown-item-desc">
-                                    <b>Alfa Zulkarnain</b> has moved task <b>Add logo</b> to <b>Done</b>
-                                    <div class="time">Yesterday</div>
-                                </div>
+                                    <img alt="image" src="../dist/img/avatar/avatar-1.jpeg" class="rounded-circle dropdown-item-img">
+                                    <div class="dropdown-item-desc">
+                                        <b>{{ Auth::user()->name }}</b> update now <b>Crud</b> to <b>Progres</b>
+                                        <div class="time">10 Hours Ago</div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
@@ -112,7 +83,7 @@
                     <ul class="sidebar-menu">
                         <li class="menu-header">Dashboard</li>
                         <li class="active">
-                            <a href="#"><i class="ion ion-speedometer"></i><span>Dashboard</span></a>
+                            <a href="{{ route('home') }}"><i class="ion ion-speedometer"></i><span>Dashboard</span></a>
                         </li>
 
                         <li class="menu-header">Administrasi</li>
@@ -130,11 +101,11 @@
                         <li>
                             <a href="#" class="has-dropdown"><i class="ion ion-ios-copy-outline"></i><span>Examples</span></a>
                             <ul class="menu-dropdown">
-                                <li><a href="login.html"><i class="ion ion-ios-circle-outline"></i> Login</a></li>
-                                <li><a href="register.html"><i class="ion ion-ios-circle-outline"></i> Register</a></li>
-                                <li><a href="forgot.html"><i class="ion ion-ios-circle-outline"></i> Forgot Password</a></li>
-                                <li><a href="reset.html"><i class="ion ion-ios-circle-outline"></i> Reset Password</a></li>
-                                <li><a href="404.html"><i class="ion ion-ios-circle-outline"></i> 404</a></li>
+                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Login</a></li>
+                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Register</a></li>
+                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Forgot Password</a></li>
+                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Reset Password</a></li>
+                                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> 404</a></li>
                             </ul>
                         </li>
 
