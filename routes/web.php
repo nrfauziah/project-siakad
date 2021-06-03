@@ -29,10 +29,40 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('admin', function () { return view('admin'); })->middleware('checkRole:admin');
-Route::get('guru','GuruController@index')->name('guru')->middleware(['checkRole:admin,guru']);
+
+//guru
+Route::get('dataguru','GuruController@index')->name('dataguru')->middleware(['checkRole:admin,guru']);
+Route::get('dataguru/create','GuruController@create')->name('tambahdataguru')->middleware(['checkRole:admin,guru']);
+Route::post('dataguru/create','GuruController@store')->name('simpandataguru')->middleware(['checkRole:admin,guru']);
+
+Route::get('dataguru/{id}/edit','GuruController@edit')->middleware(['checkRole:admin,guru']);
+Route::post('dataguru/{id}/update','GuruController@update')->middleware(['checkRole:admin,guru']);
+Route::get('dataguru/{id}/delete','GuruController@delete')->middleware(['checkRole:admin,guru']);
+
+Route::get('guru', function () { return view('guru'); });
+
+//siswa
 Route::get('datasiswa','SiswaController@index')->name('datasiswa')->middleware(['checkRole:admin,guru']);
 Route::get('datasiswa/create','SiswaController@create')->name('tambahdatasiswa')->middleware(['checkRole:admin,guru']);
-Route::get('siswa', function () { return view('siswa'); });
+Route::post('datasiswa/create','SiswaController@store')->name('simpandatasiswa')->middleware(['checkRole:admin,guru']);
+
+Route::get('datasiswa/{id}/edit','SiswaController@edit')->middleware(['checkRole:admin,guru']);
+Route::post('datasiswa/{id}/update','SiswaController@update')->middleware(['checkRole:admin,guru']);
+Route::get('datasiswa/{id}/delete','SiswaController@delete')->middleware(['checkRole:admin,guru']);
+
+Route::get('siswa', function () { return view('/siswa.siswa'); });
+
+//kelas
+Route::get('datakelas','KelasController@index')->name('datakelas')->middleware(['checkRole:admin,guru']);
+Route::get('datakelas/create','KelasController@create')->name('tambahdatakelas')->middleware(['checkRole:admin,guru']);
+Route::post('datakelas/create','KelasController@store')->name('simpandatakelas')->middleware(['checkRole:admin,guru']);
+
+Route::get('datakelas/{id}/edit','KelasController@edit')->middleware(['checkRole:admin,guru']);
+Route::post('datakelas/{id}/update','KelasController@update')->middleware(['checkRole:admin,guru']);
+Route::get('datakelas/{id}/delete','KelasController@delete')->middleware(['checkRole:admin,guru']);
+
+Route::get('kelas', function () { return view('kelas'); });
+
 
 
 

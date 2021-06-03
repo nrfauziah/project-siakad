@@ -5,16 +5,15 @@ use App\Kelas;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Siswa extends Model
+class Guru extends Model
 {
-    protected $table = 'siswas';
+    protected $table = 'guru';
     protected $fillable = [
         'nama_lengkap',
-        'kelas_id',
         'jk',
-        'nipd',
-        'tmp_lahir',
-        'tgl_lahir',
+        'nuptk',
+        'pendidikan',
+        'nis',
     ];
     
     public function kelas(){
