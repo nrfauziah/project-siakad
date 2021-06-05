@@ -31,9 +31,7 @@
         <li>
             <a href="#" class="has-dropdown"><i class="far fa-file"></i><span>Laporan Nilai Siswa</span></a>
             <ul class="menu-dropdown">
-                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Data Mata Pelajaran </a></li>
-                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Data Nilai </a></li>
-                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> KKM </a></li>
+                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Kategori Penilaian </a></li>
                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> List Nilai Siswa </a></li>
                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Setting Penilaian </a></li>
                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Cetak Raport </a></li>

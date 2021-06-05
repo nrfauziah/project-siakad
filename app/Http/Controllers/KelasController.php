@@ -26,13 +26,13 @@ class KelasController extends Controller
     public function index()
     {
         $kelas = Kelas::all();
-        return view('kelas/datakelas',compact('kelas'));
+        return view('admin/datamaster/kelas/datakelas',compact('kelas'));
     }
 
     public function create(){
         $kelas = Kelas::all();
 
-        return view('kelas/createkelas',compact('kelas'));
+        return view('admin/datamaster/kelas/createkelas',compact('kelas'));
 
     }
 
@@ -56,7 +56,7 @@ class KelasController extends Controller
     public function edit($id)
     {
         $kelas = Kelas::find($id);
-        return view('kelas/editkelas', compact('kelas'));
+        return view('admin/datamaster/kelas/editkelas', compact('kelas'));
     }
 
     public function update(Request $request, $id)

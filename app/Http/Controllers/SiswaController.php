@@ -26,12 +26,12 @@ class SiswaController extends Controller
     public function index()
     {
         $siswas = Siswa::all();
-        return view('siswa/datasiswa',compact('siswas'));
+        return view('admin/datamaster/siswa/datasiswa',compact('siswas'));
     }
 
     public function create(){
         $siswas = Siswa::all();
-        return view('siswa/createsiswa');
+        return view('admin/datamaster/siswa/createsiswa');
     }
 
     public function store(Request $request)
@@ -60,7 +60,7 @@ class SiswaController extends Controller
     public function edit($id)
     {
         $siswa = Siswa::find($id);
-        return view('siswa/editsiswa', compact('siswa'));
+        return view('admin/datamaster/siswa/editsiswa', compact('siswa'));
     }
 
     public function update(Request $request, $id)

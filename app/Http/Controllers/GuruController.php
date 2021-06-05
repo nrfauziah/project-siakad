@@ -26,13 +26,13 @@ class GuruController extends Controller
     public function index()
     {
         $guru = Guru::all();
-        return view('guru/dataguru',compact('guru'));
+        return view('admin/datamaster/guru/dataguru',compact('guru'));
     }
 
     public function create(){
         $guru = Guru::all();
 
-        return view('guru/createguru',compact('guru'));
+        return view('admin/datamaster/guru/createguru',compact('guru'));
 
     }
 
@@ -60,7 +60,7 @@ class GuruController extends Controller
     public function edit($id)
     {
         $guru = Guru::find($id);
-        return view('guru/editguru', compact('guru'));
+        return view('admin/datamaster/guru/editguru', compact('guru'));
     }
 
     public function update(Request $request, $id)
