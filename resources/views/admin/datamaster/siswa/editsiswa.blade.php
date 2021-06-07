@@ -37,8 +37,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-6">
-                                        <label for="nipd">NIPD</label>
-                                        <input id="nipd" type="text" class="form-control" name="nipd" value="{{$siswa->nipd}}">
+                                        <label for="nisn">NISN</label>
+                                        <input id="nisn" type="text" class="form-control" name="nisn" value="{{$siswa->nisn}}">
                                     </div>
                                 </div>
 

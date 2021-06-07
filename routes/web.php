@@ -52,7 +52,7 @@ Route::get('datasiswa/{id}/delete','SiswaController@delete')->middleware(['check
 
 Route::get('siswa', function () { return view('/siswa.siswa'); });
 
-//kelas
+//mapel
 Route::get('datakelas','KelasController@index')->name('datakelas')->middleware(['checkRole:admin,guru']);
 Route::get('datakelas/create','KelasController@create')->name('tambahdatakelas')->middleware(['checkRole:admin,guru']);
 Route::post('datakelas/create','KelasController@store')->name('simpandatakelas')->middleware(['checkRole:admin,guru']);
@@ -63,6 +63,16 @@ Route::get('datakelas/{id}/delete','KelasController@delete')->middleware(['check
 
 Route::get('kelas', function () { return view('kelas'); });
 
+//mapel
+Route::get('datamapel','MapelController@index')->name('datamapel')->middleware(['checkRole:admin,guru']);
+Route::get('datamapel/create','MapelController@create')->name('tambahdatamapel')->middleware(['checkRole:admin,guru']);
+Route::post('datamapel/create','MapelController@store')->name('simpandatamapel')->middleware(['checkRole:admin,guru']);
+
+Route::get('datamapel/{id}/edit','MapelController@edit')->middleware(['checkRole:admin,guru']);
+Route::post('datamapel/{id}/update','MapelController@update')->middleware(['checkRole:admin,guru']);
+Route::get('datamapel/{id}/delete','MapelController@delete')->middleware(['checkRole:admin,guru']);
+
+Route::get('mapel', function () { return view('mapel'); });
 
 
 

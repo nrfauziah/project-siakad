@@ -4,7 +4,7 @@
     </div>
     <div class="sidebar-user">
         <div class="sidebar-user-picture">
-            <img alt="image" src="{{ asset('dist/img/avatar/avatar-1.jpeg') }}">
+            <img alt="image" src="{{ asset('dist/img/user.jpg') }}">
         </div>
         <div class="sidebar-user-details">
             <div class="user-name">{{ Auth::user()->name }}</div>
@@ -26,6 +26,7 @@
                 <li class="{{ request()->is('datasiswa') ? 'active' : '' }}"><a href="{{route('datasiswa')}}"><i class="ion ion-ios-circle-outline"></i> Data Siswa </a></li>
                 <li class="{{ request()->is('dataguru') ? 'active' : '' }}"><a href="{{route('dataguru')}}"><i class="ion ion-ios-circle-outline"></i> Data Guru </a></li>
                 <li class="{{ request()->is('datakelas') ? 'active' : '' }}"><a href="{{route('datakelas')}}"><i class="ion ion-ios-circle-outline"></i> Data Kelas </a></li>
+                <li class="{{ request()->is('datamapel') ? 'active' : '' }}"><a href="{{route('datamapel')}}"><i class="ion ion-ios-circle-outline"></i> Mata Pelajaran </a></li>
             </ul>
         </li>
         <li>

@@ -43,9 +43,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nis">NIS</label>
-                                    <input id="nis" type="text" class="form-control" name="nis" value="{{$guru->nis}}">
-                                    <div class="invalid-feedback"></div>
+                                    <label for="status" name="status">Status</label>
+                                    <select class="form-control" name="status" id="status"> 
+                                        <option value="Aktif"  {{$guru->status == 'Aktif' ? 'selected':''}}>Aktif</option>
+                                        <option value="Non-aktif"{{$guru->status == 'Non-aktif' ? 'selected':''}}>Non-Aktif</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group">

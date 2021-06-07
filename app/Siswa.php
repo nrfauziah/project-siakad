@@ -2,6 +2,7 @@
 
 namespace App;
 use App\Kelas;
+use App\Mapel;
 
 use Illuminate\Database\Eloquent\Model;
 

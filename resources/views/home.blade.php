@@ -16,8 +16,9 @@
                             <h4>SISWA</h4>
                         </div>
                         <div class="card-body">
-                            35
+                            <h5>2</h5>
                         </div>
+                        <a href="{{route('datasiswa')}}" class="small-box-footer">Lihat lengkap <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -31,8 +32,9 @@
                             <h4>GURU</h4>
                         </div>
                         <div class="card-body">
-                            8
+                            <h5>8</h5>
                         </div>
+                        <a href="{{route('dataguru')}}" class="small-box-footer">Lihat lengkap <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -46,8 +48,9 @@
                             <h4>KELAS</h4>
                         </div>
                         <div class="card-body">
-                            3
+                            <h5>3</h5>
                         </div>
+                        <a href="{{route('datakelas')}}" class="small-box-footer">Lihat lengkap <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -61,8 +64,9 @@
                             <h4>Mapel</h4>
                         </div>
                         <div class="card-body">
-                            5
+                            <h5>10</h5>
                         </div>
+                        <a href="{{route('datamapel')}}" class="small-box-footer">Lihat lengkap <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>                  

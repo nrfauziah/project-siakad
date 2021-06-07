@@ -21,7 +21,7 @@
                                             <th>Nama Siswa</th>
                                             <th>Kelas</th>
                                             <th>Jenis Kelamin</th>
-                                            <th>NIPD</th>
+                                            <th>NISN</th>
                                             <th>Tempat Lahir</th>
                                             <th>Tanggal Lahir</th>                                                
                                             <th>Action</th>
@@ -33,14 +33,13 @@
                                             <td>{{$key+1}}</td>
                                             <td>{{$siswa->nama_lengkap}}</td>
                                             <td>{{$siswa->kelas_id}}</td>
-                                            <td>{{$siswa->jk}}</td>
-                                            <td>{{$siswa->nipd}}</td>
+                                            <td><i class='fa fa-{{$siswa->jk == 'Laki-laki' ? "male":"female"}}'></i> {{$siswa->jk == 'Laki-laki' ? "Laki-laki":"Perempuan"}}</td>
+                                            <td>{{$siswa->nisn}}</td>
                                             <td>{{$siswa->tmp_lahir}}</td>
                                             <td>{{$siswa->tgl_lahir}}</td>
                                             <td>
-                                                <a href="/datasiswa/{{$siswa->id}}/edit"><button class="btn btn-danger btn-sm">Edit</button></a>
-                                                <a href="/datasiswa/{{$siswa->id}}/delete"><button class="btn btn-warning btn-sm">Delete</button></a>
-                                                </td>
+                                                <a href="/datasiswa/{{$siswa->id}}/edit"><button class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></button></a>
+                                                <a href="/datasiswa/{{$siswa->id}}/delete"><button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></a>
                                             </tr>
                                         @endforeach
                                         

@@ -43,9 +43,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="nis">NIS</label>
-                                    <input id="nis" type="text" class="form-control" name="nis">
-                                    <div class="invalid-feedback"></div>
+                                    <label for="status" name="status">Status</label>
+                                    <select class="form-control" name="status" id="status"> 
+                                        <option value="Aktif">Aktif</option>
+                                        <option value="Non-aktif">Non-aktif</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group">

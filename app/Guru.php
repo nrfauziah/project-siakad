@@ -13,7 +13,7 @@ class Guru extends Model
         'jk',
         'nuptk',
         'pendidikan',
-        'nis',
+        'status',
     ];
     
     public function kelas(){

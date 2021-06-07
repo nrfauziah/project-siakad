@@ -40,7 +40,7 @@ class SiswaController extends Controller
             'nama_lengkap' => 'required',
             'kelas_id' => 'required',
             'jk' => 'required',
-            'nipd' => 'required',
+            'nisn' => 'required',
             'tmp_lahir' => 'required',
             'tgl_lahir' => 'required',
         ]);
@@ -49,7 +49,7 @@ class SiswaController extends Controller
             'nama_lengkap' => $request->nama_lengkap,
             'kelas_id' => $request->kelas_id,
             'jk' => $request->jk,
-            'nipd' => $request->nipd,
+            'nisn' => $request->nisn,
             'tmp_lahir' => $request->tmp_lahir,
             'tgl_lahir' => $request->tgl_lahir,
         ]);

@@ -3,7 +3,7 @@
 @section('content')
     <section class="section">
         <h1 class="section-header">
-            <div>Tabel Siswa</div>
+            <div>Tabel Kelas</div>
         </h1>
         <div class="section-body">
             <div class="row">
@@ -11,31 +11,36 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-divider">
-                                Edit Data Kelas
+                                Data Kelas
                             </div>
 
-                            <form action="/datakelas/{{$kelas->id}}/update" method="POST">
+                            <form action="{{route('simpandatakelas')}}" method="POST">
                                 @csrf
 
-                                <div class="form-group">
-                                    <label for="walas">Wali Kelas</label>
-                                    <input id="walas" type="text" class="form-control" name="walas" value="{{$kelas->walas}}">
-                                    <div class="invalid-feedback"></div>
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label for="kode">Kode</label>
+                                        <input id="kode" type="text" class="form-control" name="kode">
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="walas">Wali Kelas</label>
+                                        <input id="walas" type="text" class="form-control" name="walas">
+                                    </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-group col-6">
                                         <label for="kelas">Kelas</label>
-                                        <input id="kelas" type="text" class="form-control" name="kelas" value="{{$kelas->kelas}}">
+                                        <input id="kelas" type="text" class="form-control" name="kelas">
                                     </div>
                                     <div class="form-group col-6">
                                         <label for="jurusan">Jurusan</label>
-                                        <input id="jurusan" type="text" class="form-control" name="jurusan" value="{{$kelas->jurusan}}">
+                                        <input id="jurusan" type="text" class="form-control" name="jurusan">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
                                     <a href="{{ route('datakelas') }}" class="btn btn-warning">Back</a>
                                 </div>
                             </form>

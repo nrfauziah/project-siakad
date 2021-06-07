@@ -26,13 +26,13 @@ class GuruController extends Controller
     public function index()
     {
         $guru = Guru::all();
-        return view('admin/datamaster/guru/dataguru',compact('guru'));
+        return view('admin/datamaster/guru/index',compact('guru'));
     }
 
     public function create(){
         $guru = Guru::all();
 
-        return view('admin/datamaster/guru/createguru',compact('guru'));
+        return view('admin/datamaster/guru/create',compact('guru'));
 
     }
 
@@ -43,7 +43,7 @@ class GuruController extends Controller
             'jk' => 'required',
             'nuptk' => 'required',
             'pendidikan' => 'required',
-            'nis' => 'required',
+            'status' => 'required',
         ]);
 
         Guru::create([
@@ -51,7 +51,7 @@ class GuruController extends Controller
             'jk' => $request->jk,
             'nuptk' => $request->nuptk,
             'pendidikan' => $request->pendidikan,
-            'nis' => $request->nis,
+            'status' => $request->status,
         ]);
         
         return redirect('/dataguru');
@@ -60,7 +60,7 @@ class GuruController extends Controller
     public function edit($id)
     {
         $guru = Guru::find($id);
-        return view('admin/datamaster/guru/editguru', compact('guru'));
+        return view('admin/datamaster/guru/edit', compact('guru'));
     }
 
     public function update(Request $request, $id)

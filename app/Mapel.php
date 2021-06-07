@@ -5,14 +5,13 @@ use App\Siswa;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Kelas extends Model
+class Mapel extends Model
 {
-    protected $table = 'kelas';
+    protected $table = 'mapels';
     protected $fillable = [
         'kode',
-        'walas',
-        'kelas',
-        'jurusan',
+        'mapel',
+        'status',
     ]; 
 
     public function siswa(){
