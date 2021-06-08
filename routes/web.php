@@ -74,5 +74,15 @@ Route::get('datamapel/{id}/delete','MapelController@delete')->middleware(['check
 
 Route::get('mapel', function () { return view('mapel'); });
 
+//penilaian
+Route::get('datapenilaian', 'PenilaianController@index')->name('datapenilaian')->middleware(['checkRole:admin,guru']);
+Route::get('datapenilaian/create','PenilaianController@create')->name('tambahdatapenilaian')->middleware(['checkRole:admin,guru']);
+Route::post('datapenilaian/create','PenilaianController@store')->name('simpandatapenilaian')->middleware(['checkRole:admin,guru']);
+
+Route::get('datapenilaian/{id}/edit','PenilaianController@edit')->middleware(['checkRole:admin,guru']);
+Route::post('datapenilaian/{id}/update','PenilaianController@update')->middleware(['checkRole:admin,guru']);
+Route::get('datapenilaian/{id}/delete','PenilaianController@delete')->middleware(['checkRole:admin,guru']);
+
+
 
 

@@ -1,0 +1,42 @@
+@extends('layouts.master')
+
+@section('content')
+    <section class="section">
+        <h1 class="section-header">
+            <div>Tabel Penilaian</div>
+        </h1>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="form-divider">
+                                Data Penilaian
+                            </div>
+
+                            <form action="{{route('simpandatapenilaian')}}" method="POST">
+                                @csrf
+
+                                <div class="row">
+                                    <div class="form-group col-6">
+                                        <label for="kategori">Kategori</label>
+                                        <input id="kategori" type="text" class="form-control" name="kategori">
+                                    </div>
+                                    <div class="form-group col-6">
+                                        <label for="deskripsi">Deskripsi</label>
+                                        <input id="deskripsi" type="text" class="form-control" name="deskripsi">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <a href="{{ route('datapenilaian') }}" class="btn btn-warning">Back</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
