@@ -5,15 +5,16 @@ use App\Mapel;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Guru extends Model
+class Kategori extends Model
 {
-    protected $table = 'gurus';
+    protected $table = 'kategoris';
     protected $fillable = [
-        'nama_lengkap',
-        'jk',
-        'nuptk',
-        'pendidikan',
-        'status',
+        'kode_mapel',
+        'mapel',
+        'kelas',
+        'predikatA',
+        'predikatB',
+        'predikatC',
     ]; 
 
     public function mapel(){

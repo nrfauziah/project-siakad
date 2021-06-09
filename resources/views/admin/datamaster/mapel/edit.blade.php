@@ -18,14 +18,14 @@
                                 @csrf
 
                                 <div class="form-group">
-                                    <label for="kode">Kode</label>
-                                    <input id="kode" type="text" class="form-control" name="kode" value="{{$mapels->kode}}">
+                                    <label for="kode_mapel">Kode Mapel</label>
+                                    <input id="kode_mapel" type="text" class="form-control" name="kode_mapel" value="{{$mapels->kode_mapel}}">
                                     <div class="invalid-feedback"></div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-group col-6">
-                                        <label for="mapel">Mapel</label>
+                                        <label for="mapel">Mata Pelajaran</label>
                                         <input id="mapel" type="text" class="form-control" name="mapel" value="{{$mapels->mapel}}">
                                     </div>
                                     <div class="form-group col-6">

@@ -26,18 +26,18 @@ class SiswaController extends Controller
     public function index()
     {
         $siswas = Siswa::all();
-        return view('admin/datamaster/siswa/datasiswa',compact('siswas'));
+        return view('admin/datamaster/siswa/index',compact('siswas'));
     }
 
     public function create(){
         $siswas = Siswa::all();
-        return view('admin/datamaster/siswa/createsiswa');
+        return view('admin/datamaster/siswa/create');
     }
 
     public function store(Request $request)
     {
         $this->validate($request,[
-            'nama_lengkap' => 'required',
+            'nama_siswa' => 'required',
             'kelas_id' => 'required',
             'jk' => 'required',
             'nisn' => 'required',
@@ -46,7 +46,7 @@ class SiswaController extends Controller
         ]);
 
         Siswa::create([
-            'nama_lengkap' => $request->nama_lengkap,
+            'nama_siswa' => $request->nama_siswa,
             'kelas_id' => $request->kelas_id,
             'jk' => $request->jk,
             'nisn' => $request->nisn,
@@ -60,7 +60,7 @@ class SiswaController extends Controller
     public function edit($id)
     {
         $siswa = Siswa::find($id);
-        return view('admin/datamaster/siswa/editsiswa', compact('siswa'));
+        return view('admin/datamaster/siswa/edit', compact('siswa'));
     }
 
     public function update(Request $request, $id)
@@ -75,5 +75,11 @@ class SiswaController extends Controller
         $siswas = \App\Siswa::find($id);
         $siswas->delete();
         return redirect('/datasiswa')->with('sukses','Data berhasil dihapus');
+    }
+
+    public function detail($id)
+    {
+        $siswa = Siswa::find($id);
+        return view('admin/datamaster/siswa/detail', compact('siswa'));
     }
 }

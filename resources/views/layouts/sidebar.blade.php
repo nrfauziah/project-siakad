@@ -26,14 +26,16 @@
                 <li class="{{ request()->is('datasiswa') ? 'active' : '' }}"><a href="{{route('datasiswa')}}"><i class="ion ion-ios-circle-outline"></i> Data Siswa </a></li>
                 <li class="{{ request()->is('dataguru') ? 'active' : '' }}"><a href="{{route('dataguru')}}"><i class="ion ion-ios-circle-outline"></i> Data Guru </a></li>
                 <li class="{{ request()->is('datakelas') ? 'active' : '' }}"><a href="{{route('datakelas')}}"><i class="ion ion-ios-circle-outline"></i> Data Kelas </a></li>
-                <li class="{{ request()->is('datamapel') ? 'active' : '' }}"><a href="{{route('datamapel')}}"><i class="ion ion-ios-circle-outline"></i> Mata Pelajaran </a></li>
             </ul>
         </li>
         <li>
             <a href="#" class="has-dropdown"><i class="far fa-file"></i><span>Laporan Nilai Siswa</span></a>
             <ul class="menu-dropdown">
-                <li class="{{ request()->is('datapenilaian') ? 'active' : '' }}"><a href="{{route('datapenilaian')}}"><i class="ion ion-ios-circle-outline"></i> Kategori Penilaian </a></li>
-                <li><a href="#"><i class="ion ion-ios-circle-outline"></i> List Nilai Siswa </a></li>
+                <li class="{{ request()->is('datamapel') ? 'active' : '' }}"><a href="{{route('datamapel')}}"><i class="ion ion-ios-circle-outline"></i> Mata Pelajaran </a></li>
+                <li class="{{ request()->is('datakategori') ? 'active' : '' }}"><a href="{{route('datakategori')}}"><i class="ion ion-ios-circle-outline"></i> Kategori Penilaian </a></li>
+                <li class="{{ request()->is('datakkm') ? 'active' : '' }}"><a href="{{route('datakkm')}}"><i class="ion ion-ios-circle-outline"></i> KKM </a></li>
+                <li class="{{ request()->is('entrynilai') ? 'active' : '' }}"><a href="{{route('entrynilai')}}"><i class="ion ion-ios-circle-outline"></i> Entry Penilaian </a></li>
+                <li ><a href=""><i class="ion ion-ios-circle-outline"></i> List Nilai Siswa </a></li>
                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Setting Penilaian </a></li>
                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Cetak Raport </a></li>
                 <li><a href="#"><i class="ion ion-ios-circle-outline"></i> Laporan Rekap Nilai </a></li>

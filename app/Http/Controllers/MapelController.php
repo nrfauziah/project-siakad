@@ -38,29 +38,18 @@ class MapelController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'kode' => 'required',
+            'kode_mapel' => 'required',
             'mapel' => 'required',
             'status' => 'required',
         ]);
 
         Mapel::create([
-            'kode' => $request->kode,
+            'kode_mapel' => $request->kode_mapel,
             'mapel' => $request->mapel,
             'status' => $request->status,
         ]);
         
         return redirect('/datamapel'); 
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Mapel  $mapel
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Mapel $mapel)
-    {
-        //
     }
 
     /**

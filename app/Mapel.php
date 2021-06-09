@@ -9,7 +9,7 @@ class Mapel extends Model
 {
     protected $table = 'mapels';
     protected $fillable = [
-        'kode',
+        'kode_mapel',
         'mapel',
         'status',
     ]; 

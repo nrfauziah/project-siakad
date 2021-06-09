@@ -18,8 +18,8 @@
                                 @csrf
 
                                 <div class="form-group">
-                                    <label for="kode">Kode</label>
-                                    <input id="kode" type="text" class="form-control" name="kode">
+                                    <label for="kode_mapel">Kode Mapel</label>
+                                    <input id="kode_mapel" type="text" class="form-control" name="kode_mapel">
                                     <div class="invalid-feedback"></div>
                                 </div>
 

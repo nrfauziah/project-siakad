@@ -2,40 +2,38 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Guru;
-use App\Kelas;
+use Illuminate\Http\Request;
 
 class GuruController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Display a listing of the resource.
      *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $guru = Guru::all();
-        return view('admin/datamaster/guru/index',compact('guru'));
+        $gurus = Guru::all();
+        return view('admin/datamaster/guru/index',compact('gurus'));
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create(){
-        $guru = Guru::all();
-
-        return view('admin/datamaster/guru/create',compact('guru'));
-
+        $gurus = Guru::all();
+        return view('admin/datamaster/guru/create',compact('gurus'));
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -59,21 +57,21 @@ class GuruController extends Controller
 
     public function edit($id)
     {
-        $guru = Guru::find($id);
-        return view('admin/datamaster/guru/edit', compact('guru'));
+        $gurus = Guru::find($id);
+        return view('admin/datamaster/guru/edit', compact('gurus'));
     }
 
     public function update(Request $request, $id)
     {
-        $guru = \App\Guru::find($id);
-        $guru->update($request->all());
+        $gurus = \App\Guru::find($id);
+        $gurus->update($request->all());
         return redirect('/dataguru')->with('sukses','Data berhasil diupdate');
     }
 
     public function delete($id)
     {
-        $guru = \App\Guru::find($id);
-        $guru->delete();
+        $gurus = \App\Guru::find($id);
+        $gurus->delete();
         return redirect('/dataguru')->with('sukses','Data berhasil dihapus');
     }
 }

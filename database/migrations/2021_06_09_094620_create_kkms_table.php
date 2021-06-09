@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePenilaiansTable extends Migration
+class CreateKkmsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreatePenilaiansTable extends Migration
      */
     public function up()
     {
-        Schema::create('kategoris', function (Blueprint $table) {
-            $table->id();
-            $table->string('kategori');
-            $table->string('deskripsi', 30);
+        Schema::create('kkms', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('kode_mapel');
+            $table->string('mapel', 30)->nullable();
+            $table->string('kelas', 30)->nullable();
+            $table->string('kkm', 30)->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreatePenilaiansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kategoris');
+        Schema::dropIfExists('kkms');
     }
 }

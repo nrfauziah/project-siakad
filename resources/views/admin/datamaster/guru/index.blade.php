@@ -27,7 +27,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ( $guru as $key => $guru )
+                                        @foreach ( $gurus as $key => $guru )
                                         <tr>
                                             <td>{{$key+1}}</td>
                                             <td>{{$guru->nama_lengkap}}</td>

@@ -30,6 +30,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('admin', function () { return view('admin'); })->middleware('checkRole:admin');
 
+//siswa
+Route::get('datasiswa','SiswaController@index')->name('datasiswa')->middleware(['checkRole:admin,guru']);
+Route::get('datasiswa/create','SiswaController@create')->name('tambahdatasiswa')->middleware(['checkRole:admin,guru']);
+Route::post('datasiswa/create','SiswaController@store')->name('simpandatasiswa')->middleware(['checkRole:admin,guru']);
+
+Route::get('datasiswa/{id}/edit','SiswaController@edit')->middleware(['checkRole:admin,guru']);
+Route::post('datasiswa/{id}/update','SiswaController@update')->middleware(['checkRole:admin,guru']);
+Route::get('datasiswa/{id}/delete','SiswaController@delete')->middleware(['checkRole:admin,guru']);
+Route::get('datasiswa/{id}/detail','SiswaController@detail')->middleware(['checkRole:admin,guru']);
+
+Route::get('siswa', function () { return view('/siswa.siswa'); });
+
 //guru
 Route::get('dataguru','GuruController@index')->name('dataguru')->middleware(['checkRole:admin,guru']);
 Route::get('dataguru/create','GuruController@create')->name('tambahdataguru')->middleware(['checkRole:admin,guru']);
@@ -39,20 +51,9 @@ Route::get('dataguru/{id}/edit','GuruController@edit')->middleware(['checkRole:a
 Route::post('dataguru/{id}/update','GuruController@update')->middleware(['checkRole:admin,guru']);
 Route::get('dataguru/{id}/delete','GuruController@delete')->middleware(['checkRole:admin,guru']);
 
-Route::get('guru', function () { return view('guru'); });
+Route::get('gurus', function () { return view('gurus'); });
 
-//siswa
-Route::get('datasiswa','SiswaController@index')->name('datasiswa')->middleware(['checkRole:admin,guru']);
-Route::get('datasiswa/create','SiswaController@create')->name('tambahdatasiswa')->middleware(['checkRole:admin,guru']);
-Route::post('datasiswa/create','SiswaController@store')->name('simpandatasiswa')->middleware(['checkRole:admin,guru']);
-
-Route::get('datasiswa/{id}/edit','SiswaController@edit')->middleware(['checkRole:admin,guru']);
-Route::post('datasiswa/{id}/update','SiswaController@update')->middleware(['checkRole:admin,guru']);
-Route::get('datasiswa/{id}/delete','SiswaController@delete')->middleware(['checkRole:admin,guru']);
-
-Route::get('siswa', function () { return view('/siswa.siswa'); });
-
-//mapel
+//kelas
 Route::get('datakelas','KelasController@index')->name('datakelas')->middleware(['checkRole:admin,guru']);
 Route::get('datakelas/create','KelasController@create')->name('tambahdatakelas')->middleware(['checkRole:admin,guru']);
 Route::post('datakelas/create','KelasController@store')->name('simpandatakelas')->middleware(['checkRole:admin,guru']);
@@ -74,15 +75,34 @@ Route::get('datamapel/{id}/delete','MapelController@delete')->middleware(['check
 
 Route::get('mapel', function () { return view('mapel'); });
 
-//penilaian
-Route::get('datapenilaian', 'PenilaianController@index')->name('datapenilaian')->middleware(['checkRole:admin,guru']);
-Route::get('datapenilaian/create','PenilaianController@create')->name('tambahdatapenilaian')->middleware(['checkRole:admin,guru']);
-Route::post('datapenilaian/create','PenilaianController@store')->name('simpandatapenilaian')->middleware(['checkRole:admin,guru']);
+//kategori
+Route::get('datakategori','KategoriController@index')->name('datakategori')->middleware(['checkRole:admin,guru']);
+Route::get('datakategori/create','KategoriController@create')->name('tambahdatakategori')->middleware(['checkRole:admin,guru']);
+Route::post('datakategori/create','KategoriController@store')->name('simpandatakategori')->middleware(['checkRole:admin,guru']);
 
-Route::get('datapenilaian/{id}/edit','PenilaianController@edit')->middleware(['checkRole:admin,guru']);
-Route::post('datapenilaian/{id}/update','PenilaianController@update')->middleware(['checkRole:admin,guru']);
-Route::get('datapenilaian/{id}/delete','PenilaianController@delete')->middleware(['checkRole:admin,guru']);
+Route::get('datakategori/{id}/edit','KategoriController@edit')->middleware(['checkRole:admin,guru']);
+Route::post('datakategori/{id}/update','KategoriController@update')->middleware(['checkRole:admin,guru']);
+Route::get('datakategori/{id}/delete','KategoriController@delete')->middleware(['checkRole:admin,guru']);
 
+Route::get('kategori', function () { return view('kategori'); });
+
+//enilai
+Route::get('entrynilai','EnilaiController@index')->name('entrynilai')->middleware(['checkRole:admin,guru']);
+Route::post('entrynilai/create','EnilaiController@store')->name('simpanentrynilai')->middleware(['checkRole:admin,guru']);
+
+Route::get('entrynilai/{id}/edit','EnilaiController@edit')->middleware(['checkRole:admin,guru']);
+Route::post('entrynilai/{id}/update','EnilaiController@update')->middleware(['checkRole:admin,guru']);
+
+Route::get('mapel', function () { return view('mapel'); });
+
+//kkm
+Route::get('datakkm','KkmController@index')->name('datakkm')->middleware(['checkRole:admin,guru']);
+Route::post('datakkm/create','KkmController@store')->name('simpandatakkm')->middleware(['checkRole:admin,guru']);
+
+Route::get('datakkm/{id}/edit','KkmController@edit')->middleware(['checkRole:admin,guru']);
+Route::post('datakkm/{id}/update','KkmController@update')->middleware(['checkRole:admin,guru']);
+
+Route::get('kkms', function () { return view('kkms'); });
 
 
 

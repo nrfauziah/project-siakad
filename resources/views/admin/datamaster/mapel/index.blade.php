@@ -28,7 +28,7 @@
                                         @foreach ( $mapels as $key => $mapel )
                                         <tr>
                                             <td>{{$key+1}}</td>
-                                            <td>{{$mapel->kode}}</td>
+                                            <td>{{$mapel->kode_mapel}}</td>
                                             <td>{{$mapel->mapel}}</td>
                                             <td>{{$mapel->status}}</td>
                                             <td>

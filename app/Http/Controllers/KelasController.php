@@ -31,7 +31,6 @@ class KelasController extends Controller
 
     public function create(){
         $kelas = Kelas::all();
-
         return view('admin/datamaster/kelas/create',compact('kelas'));
 
     }
